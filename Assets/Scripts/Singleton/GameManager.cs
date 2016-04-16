@@ -34,13 +34,22 @@ public class GameManager : Singleton<GameManager> {
         set { _coinsGot = value; }
     }
 
+	private float _health;
+
+	public float Health
+	{
+		get { return _health; }
+		set { _health = value; }
+	}
 
 	private float maxTime = 60; // In seconds.
 
+	private float maxHealth = 100; // The max health of the hero
 
 	// Use this for initialization
 	void Start () {
 		TimeRemaining = maxTime;
+		Health = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -60,5 +69,8 @@ public class GameManager : Singleton<GameManager> {
 		Application.LoadLevel (Application.loadedLevel);
 		TimeRemaining = maxTime;
 		NumCoins = 0;
+		//Reset the health of the hero
+		Health = maxHealth;
+
 	}
 }
