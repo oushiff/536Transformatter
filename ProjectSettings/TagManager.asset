@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Patrol Edge
-  - 1
+  - PlayerCloud
+  - PlayerSnow
   layers:
   - Default
   - TransparentFX

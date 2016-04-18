@@ -7,6 +7,7 @@ public class HeroTransform : MonoBehaviour {
 
 	public bool isSnowTransform = false;
 	public bool isCloudTransform = false;
+	public bool isCameraChange = false;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,9 @@ public class HeroTransform : MonoBehaviour {
 		isCloudTransform = !isCloudTransform;
 		Debug.Log ("+++snow OnClick!!" + isSnowTransform);
 		Debug.Log ("+++cloud OnClick!!" + isCloudTransform);
+
+		isCameraChange = !isCameraChange;
+
 	}
 
 
