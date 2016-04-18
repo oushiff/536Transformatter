@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 	private bool isJump = false;
 
 	private Vector3 outOfScreen;
+	public CloudController cloudController;
+	public Vector3 lastPosition;
 
 	//
 	//	//For Crawler
@@ -64,6 +66,9 @@ public class PlayerController : MonoBehaviour {
 	{
 		bool isSnowClick = heroTransform.isSnowTransform;
 
+		if (isSnow)
+			lastPosition = transform.position;
+		
 		if (isSnowClick) {
 			heroTransform.isSnowTransform = false;
 			isSnowClick = false;
@@ -77,7 +82,7 @@ public class PlayerController : MonoBehaviour {
 				Debug.Log ("Snow re-appear!!!!");
 				//GameObject cloudObject = GameObject.Find ("CloudBall");
 				//cloudObject.SetActive (true);
-				transform.position = new Vector3 (-5f, -2f, 0f);
+				transform.position = cloudController.lastPosition;
 				//GameObject.Instantiate(cloudObject,transform.position/* new Vector3(5.6f,12.5f,0f)*/,Quaternion.identity);
 			}
 		}

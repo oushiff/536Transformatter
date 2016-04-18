@@ -19,6 +19,8 @@ public class CloudController : MonoBehaviour {
 	private bool isCloud = true;
 
 	private Vector3 outOfScreen;
+	public PlayerController playerController;
+	public Vector3 lastPosition;
 
 
 	void Awake(){
@@ -43,6 +45,9 @@ public class CloudController : MonoBehaviour {
 	{
 		bool isBtnClick = heroTransform.isCloudTransform;
 
+		if (isCloud)
+			lastPosition = transform.position;
+		
 		if (isBtnClick) {
 			heroTransform.isCloudTransform = false;
 			isBtnClick = false;
@@ -56,7 +61,7 @@ public class CloudController : MonoBehaviour {
 				Debug.Log ("Cloud re-appear!!!!");
 				//GameObject cloudObject = GameObject.Find ("CloudBall");
 				//cloudObject.SetActive (true);
-				transform.position = new Vector3 (-7f, -2f, 0f);
+				transform.position = playerController.lastPosition;
 				//GameObject.Instantiate(cloudObject,transform.position/* new Vector3(5.6f,12.5f,0f)*/,Quaternion.identity);
 			}
 
