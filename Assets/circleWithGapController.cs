@@ -3,6 +3,8 @@ using System.Collections;
 
 public class circleWithGapController : MonoBehaviour {
 
+	public HeroTransform heroTransform;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,8 +16,12 @@ public class circleWithGapController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "Player")
-			GameManager.Instance.RestartGame ();
+		Debug.Log ("Collision!!!");
+		if (other.gameObject.tag == "PlayerCloud") {
+			// health decrease
+			heroTransform.OnClick ();
+		}
+			//GameManager.Instance.RestartGame ();
 		//else currentState.OnTriggerEnter(other);
 	}
 }

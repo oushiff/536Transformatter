@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager> {
 		set { _health = value; }
 	}
 
-	private float maxTime = 60; // In seconds.
+	private float maxTime = 10; // In seconds.
 
 	private float maxHealth = 100; // The max health of the hero
 
