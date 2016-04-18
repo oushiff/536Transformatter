@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
 	private bool isSnow = false;
 	private bool isJump = false;
 
+	private Vector3 outOfScreen;
+
 	//
 	//	//For Crawler
 	//	public float moveSpeed = .2f;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D> ();
 		isSnow = false;
 		isJump = false;
+		outOfScreen = new Vector3 (-40f, 0f, 0f);
 	}
 
 	// Use this for initialization
@@ -59,6 +62,31 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		bool isSnowClick = heroTransform.isSnowTransform;
+
+		if (isSnowClick) {
+			heroTransform.isSnowTransform = false;
+			isSnowClick = false;
+			isSnow = !isSnow;
+			if (!isSnow) {
+				Debug.Log ("Snow Disappear!!!!");
+				//cloudObject.SetActive (false);
+				//Destroy(cloudObject);
+				transform.position = outOfScreen;
+			} else {
+				Debug.Log ("Snow re-appear!!!!");
+				//GameObject cloudObject = GameObject.Find ("CloudBall");
+				//cloudObject.SetActive (true);
+				transform.position = new Vector3 (-5f, -2f, 0f);
+				//GameObject.Instantiate(cloudObject,transform.position/* new Vector3(5.6f,12.5f,0f)*/,Quaternion.identity);
+			}
+		}
+
+		if (!isSnow) {
+			transform.position = outOfScreen;
+			return;
+		}
+
 		//Store the current horizontal input in the float moveHorizontal.
 		float moveHorizontal = Input.GetAxis ("Horizontal") * speedFactor;
 
@@ -77,25 +105,6 @@ public class PlayerController : MonoBehaviour {
 		movement.y = 0;//joystick.Vertical();
 		//Debug.Log (" spped " + movement.y);
 
-		bool isSnowClick = heroTransform.isSnowTransform;
-
-		if (isSnowClick) {
-			heroTransform.isSnowTransform = false;
-			isSnowClick = false;
-			isSnow = !isSnow;
-			if (!isSnow) {
-				Debug.Log ("Snow Disappear!!!!");
-				//cloudObject.SetActive (false);
-				//Destroy(cloudObject);
-				transform.position = new Vector3 (0f, 0f, 0f);
-			} else {
-				Debug.Log ("Snow re-appear!!!!");
-				//GameObject cloudObject = GameObject.Find ("CloudBall");
-				//cloudObject.SetActive (true);
-				transform.position = new Vector3 (-5f, -2f, 0f);
-				//GameObject.Instantiate(cloudObject,transform.position/* new Vector3(5.6f,12.5f,0f)*/,Quaternion.identity);
-			}
-		}
 
 		bool isJumpClick = heroJump.isClickBool;
 

@@ -18,12 +18,13 @@ public class CloudController : MonoBehaviour {
 	public int i;
 	private bool isCloud = true;
 
+	private Vector3 outOfScreen;
 
 
 	void Awake(){
 		rb2d = GetComponent<Rigidbody2D> ();
 		isCloud = true;
-
+		outOfScreen = new Vector3 (-40f, 0f, 0f);
 	}
 
 	void Start () {
@@ -40,26 +41,6 @@ public class CloudController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		//Store the current horizontal input in the float moveHorizontal.
-		float moveHorizontal = Input.GetAxis ("Horizontal") * speedFactor;
-
-		//Store the current vertical input in the float moveVertical.
-		float moveVertical = Input.GetAxis ("Vertical") * speedFactor;
-
-		movement = new Vector2 (moveHorizontal, moveVertical); 
-
-		movement.x = joystick.Horizontal () * speedFactor;
-
-		movement.y = joystick.Vertical () * speedFactor;
-
-		float moveMag = movement.magnitude;
-
-		if ( moveMag > MaxSpeed) {
-			movement = movement * MaxSpeed / moveMag; 
-		}
-
-		rb2d.velocity = new Vector2 (movement.x , movement.y);
-
 		bool isBtnClick = heroTransform.isCloudTransform;
 
 		if (isBtnClick) {
@@ -80,6 +61,33 @@ public class CloudController : MonoBehaviour {
 			}
 
 		}
+
+		if (!isCloud) {
+			transform.position = outOfScreen;
+			return;
+		}
+
+		//Store the current horizontal input in the float moveHorizontal.
+		float moveHorizontal = Input.GetAxis ("Horizontal") * speedFactor;
+
+		//Store the current vertical input in the float moveVertical.
+		float moveVertical = Input.GetAxis ("Vertical") * speedFactor;
+
+		movement = new Vector2 (moveHorizontal, moveVertical); 
+
+		movement.x = joystick.Horizontal () * speedFactor;
+
+		movement.y = joystick.Vertical () * speedFactor;
+
+		float moveMag = movement.magnitude;
+
+		if ( moveMag > MaxSpeed) {
+			movement = movement * MaxSpeed / moveMag; 
+		}
+
+		rb2d.velocity = new Vector2 (movement.x , movement.y);
+
+
 	}
 
 }
