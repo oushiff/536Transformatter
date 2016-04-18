@@ -15,14 +15,14 @@ public class CameraFollow : MonoBehaviour {
 	public Vector3 maxCameraPos;
 
 	public HeroTransform heroTransform;
-	private bool isCloudCamera = true;
+	private bool isCloudCamera = false;
 
 	void Awake(){
-		isCloudCamera = true;
+		isCloudCamera = false;
 	}
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("PlayerCloud");
+		player = GameObject.FindGameObjectWithTag ("PlayerSnow");
 
 
 	}

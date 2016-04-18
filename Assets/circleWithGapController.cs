@@ -13,8 +13,8 @@ public class circleWithGapController : MonoBehaviour {
         transform.Rotate(new Vector3(0, 0, 30) * Time.deltaTime);
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Player")
+	void OnCollisionEnter2D(Collision2D other){
+		if (other.gameObject.tag == "Player")
 			GameManager.Instance.RestartGame ();
 		//else currentState.OnTriggerEnter(other);
 	}

@@ -16,7 +16,7 @@ public class CloudController : MonoBehaviour {
 	private Vector2 movement;
 	public GameObject cloudObject;
 	public int i;
-	private bool isCloud = true;
+	private bool isCloud = false;
 
 	private Vector3 outOfScreen;
 	public PlayerController playerController;
@@ -25,7 +25,7 @@ public class CloudController : MonoBehaviour {
 
 	void Awake(){
 		rb2d = GetComponent<Rigidbody2D> ();
-		isCloud = true;
+		isCloud = false;
 		outOfScreen = new Vector3 (-40f, 0f, 0f);
 	}
 

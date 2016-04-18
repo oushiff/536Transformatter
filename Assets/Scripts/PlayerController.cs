@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 	//Use the two store floats to create a new Vector2 variable movement.
 	private Vector2 movement;
 	public int i;
-	private bool isSnow = false;
+	private bool isSnow = true;
 	private bool isJump = false;
 
 	private Vector3 outOfScreen;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Awake(){
 		rb2d = GetComponent<Rigidbody2D> ();
-		isSnow = false;
+		isSnow = true;
 		isJump = false;
 		outOfScreen = new Vector3 (-40f, 0f, 0f);
 	}
