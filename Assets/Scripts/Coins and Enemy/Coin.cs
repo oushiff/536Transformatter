@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider2d)
 	{
-		if (collider2d.gameObject.tag == "Player")
+		if (collider2d.gameObject.tag == "PlayerSnow" || collider2d.gameObject.tag == "PlayerCloud")
 		{
 			Pickup();
 		}
