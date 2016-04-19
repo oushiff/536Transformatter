@@ -2652,7 +2652,6 @@ GameObject:
   - 212: {fileID: 941328408}
   - 50: {fileID: 941328407}
   - 114: {fileID: 941328410}
-  - 114: {fileID: 941328411}
   - 60: {fileID: 941328405}
   m_Layer: 0
   m_Name: CloudBall
@@ -2784,15 +2783,67 @@ MonoBehaviour:
   i: 0
   playerController: {fileID: 2093122838}
   lastPosition: {x: 0, y: 0, z: 0}
---- !u!114 &941328411
+--- !u!1 &947646137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 947646139}
+  - 114: {fileID: 947646138}
+  - 114: {fileID: 947646141}
+  - 114: {fileID: 947646140}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947646138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 941328404}
+  m_GameObject: {fileID: 947646137}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60d1023e55a504abdafcb35317125751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &947646139
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947646137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.089554, y: -6.7960167, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+--- !u!114 &947646140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947646137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6cd58ec77924c709770696d2ee8e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &947646141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947646137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9ac71d2023745ec9d95ec7fc792a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1256638157
@@ -2972,7 +3023,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256638157}
-  m_Mesh: {fileID: 4300000, guid: 05e64a419d55649fcb0384e21dfd34d5, type: 2}
+  m_Mesh: {fileID: 4300000, guid: aa6015a02162b451f82e2c6a9a312644, type: 2}
 --- !u!4 &1256638163
 Transform:
   m_ObjectHideFlags: 0
