@@ -54,7 +54,7 @@ public class Enemy : Character {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Player") {
+		if (other.tag == "PlayerSnow" || other.tag == "PlayerCloud") {
 			Debug.Log ("Player's health is deducted");
 			GameManager.Instance.Health -= 50;
 			Debug.Log ("Current Health:" + GameManager.Instance.Health);
@@ -70,7 +70,7 @@ public class Enemy : Character {
 	private GameObject enemySelf;
 
 	void OnTriggerExit2D(Collider2D other){
-		if (other.tag == "Player") {
+		if (other.tag == "PlayerSnow" || other.tag == "PlayerCloud") {
 			Debug.Log ("Enemy died");
 			Destroy (enemySelf); // the health is deducted, and enemy died
 		}

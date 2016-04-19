@@ -63,14 +63,12 @@ public class GameManager : Singleton<GameManager> {
 
 
 	public void RestartGame(){
-		//Debug.LogError ("Reset");
-
-
 		Application.LoadLevel (Application.loadedLevel);
+		ResetPlayerProperty ();
+	}
+	public void ResetPlayerProperty(){
 		TimeRemaining = maxTime;
 		NumCoins = 0;
-		//Reset the health of the hero
 		Health = maxHealth;
-
 	}
 }
