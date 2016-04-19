@@ -48,6 +48,9 @@
      <Compile Include="Assets\2DTerrainEditor\Example\Scripts\Terrain2DGenerator.cs" />
      <Compile Include="Assets\2DTerrainEditor\Example\Scripts\Terrain2DRealtimeDeformer.cs" />
      <Compile Include="Assets\2DTerrainEditor\Scripts\TerrainEditor2D.cs" />
+     <Compile Include="Assets\CircleFireController.cs" />
+     <Compile Include="Assets\CircleIceController.cs" />
+     <Compile Include="Assets\CircleStoneController.cs" />
      <Compile Include="Assets\CloudController.cs" />
      <Compile Include="Assets\HeroJump.cs" />
      <Compile Include="Assets\HeroTransform.cs" />
@@ -86,7 +89,6 @@
      <Compile Include="Assets\Scripts\WinController.cs" />
      <Compile Include="Assets\Scripts\woodController1.cs" />
      <Compile Include="Assets\Scripts\woodController2.cs" />
-     <Compile Include="Assets\circleWithGapController.cs" />
      <Compile Include="Assets\healthbarController.cs" />
      <Compile Include="Assets\rotateTerrainController.cs" />
      <None Include="Assets\ProjectSettings\ProjectVersion.txt" />

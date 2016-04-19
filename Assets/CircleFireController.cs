@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class circleWithGapController : MonoBehaviour {
+public class CircleFireController : MonoBehaviour {
 
 	public HeroTransform heroTransform;
 
@@ -17,7 +17,7 @@ public class circleWithGapController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		Debug.Log ("Collision!!!");
-		if (other.gameObject.tag == "PlayerCloud") {
+		if (other.gameObject.tag == "PlayerSnow") {
 			// health decrease
 			heroTransform.OnClick ();
 		}
