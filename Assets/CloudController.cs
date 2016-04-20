@@ -56,11 +56,13 @@ public class CloudController : MonoBehaviour {
 				Debug.Log ("Cloud Disappear!!!!");
 				//cloudObject.SetActive (false);
 				//Destroy(cloudObject);
+				GameManager.Instance.Status = "PlayerSnow";
 				transform.position = new Vector3 (0f, 0f, 0f);
 			} else {
 				Debug.Log ("Cloud re-appear!!!!");
 				//GameObject cloudObject = GameObject.Find ("CloudBall");
 				//cloudObject.SetActive (true);
+				GameManager.Instance.Status = "PlayerCloud";
 				transform.position = playerController.lastPosition;
 				//GameObject.Instantiate(cloudObject,transform.position/* new Vector3(5.6f,12.5f,0f)*/,Quaternion.identity);
 			}
