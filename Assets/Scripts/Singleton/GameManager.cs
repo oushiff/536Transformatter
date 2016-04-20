@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager> {
 
 	private string _status;
 
-	public float Status
+	public string Status
 	{
 		get{ return _status; }
 		set{ _status = value; }
