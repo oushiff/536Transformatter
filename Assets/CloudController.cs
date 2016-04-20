@@ -56,7 +56,7 @@ public class CloudController : MonoBehaviour {
 				Debug.Log ("Cloud Disappear!!!!");
 				//cloudObject.SetActive (false);
 				//Destroy(cloudObject);
-				transform.position = new Vector3 (0f, 0f, 0f);
+				transform.position = outOfScreen;
 			} else {
 				Debug.Log ("Cloud re-appear!!!!");
 				//GameObject cloudObject = GameObject.Find ("CloudBall");
