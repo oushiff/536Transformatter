@@ -28,6 +28,8 @@ public class Singleton <T> : MonoBehaviour where T : MonoBehaviour{
 
 	public virtual void Awake()
 	{
+		_instance = this as T;
+		/*
 		if (_instance == null)
 		{
 			_instance = this as T;
@@ -36,6 +38,6 @@ public class Singleton <T> : MonoBehaviour where T : MonoBehaviour{
 		else
 		{
 			Destroy (gameObject);
-		}
+		}*/
 	}
 }
